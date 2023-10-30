@@ -1,22 +1,21 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Dog from './components/Dog';
+const dogs = [
+  { name: 'Ryder', age: 4, bread: 'PR Street Dog' },
+  { name: 'Goldr', age: 5, bread: 'Yellow lab' },
+  { name: 'Scouby', age: 7, bread: 'Jack russel Terr.' }
+]
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Dogs:</h1>
+        {dogs.map(dog => <Dog age={dog.age}
+          name={dog.name}
+          bread={dog.bread} />)}
+
       </header>
     </div>
   );
